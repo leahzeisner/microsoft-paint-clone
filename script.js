@@ -27,10 +27,18 @@ let isEraser = false;
 let isMouseDown = false;
 let drawnArray = [];
 
+const BRUSH_TIME = 1500
 
 
 
 
+
+
+
+// Set the time to switch to brush
+function brushTimeSetTimeout(ms) {
+  setTimeout(switchToBrush, ms);
+}
 
 
 // Formatting Brush Size
@@ -106,7 +114,7 @@ clearCanvasBtn.addEventListener('click', () => {
   drawnArray = [];
   // Active Tool
   activeToolEl.textContent = 'Canvas Cleared';
-  setTimeout(switchToBrush, 1500);
+  brushTimeSetTimeout(BRUSH_TIME)
 });
 
 
@@ -196,7 +204,7 @@ saveStorageBtn.addEventListener('click', () => {
 
   // Active Tool
   activeToolEl.textContent = 'Canvas Saved';
-  setTimeout(switchToBrush, 1500);
+  brushTimeSetTimeout(BRUSH_TIME)
 });
 
 
@@ -208,10 +216,10 @@ loadStorageBtn.addEventListener('click', () => {
 
     // Active Tool
     activeToolEl.textContent = 'Canvas Loaded';
-    setTimeout(switchToBrush, 1500);
+    brushTimeSetTimeout(BRUSH_TIME)
   } else {
     activeToolEl.textContent = 'No Canvas Found';
-    setTimeout(switchToBrush, 1500);
+    brushTimeSetTimeout(BRUSH_TIME)
   }
 
 });
@@ -223,7 +231,7 @@ clearStorageBtn.addEventListener('click', () => {
 
   // Active Tool
   activeToolEl.textContent = 'Local Storage Cleared';
-  setTimeout(switchToBrush, 1500);
+  brushTimeSetTimeout(BRUSH_TIME)
 });
 
 
@@ -234,7 +242,7 @@ downloadBtn.addEventListener('click', () => {
 
   // Active Tool
   activeToolEl.textContent = 'Image File Saved';
-  setTimeout(switchToBrush, 1500);
+  brushTimeSetTimeout(BRUSH_TIME)
 });
 
 
